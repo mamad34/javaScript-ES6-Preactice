@@ -79,3 +79,22 @@ const listOfUsers = users.map(function (item) {
 console.log(listOfUsers);
 
 //filter helper start
+
+const products = [
+  { name: "ipad", category: "tech" },
+  { name: "sony", category: "tech2" },
+  { name: "iphone", category: "tech3" },
+  { name: "imac", category: "tech4" },
+];
+
+const result = products.filter(function (item) {
+  return item.category === "tech3";
+});
+//OR
+const result2 = products.filter(function (item2) {
+  if (item2.name === "ipad") {
+    return true;
+  } else false;
+});
+console.log(result);
+console.log(result2);
