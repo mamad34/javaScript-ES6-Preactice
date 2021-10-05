@@ -98,3 +98,89 @@ const result2 = products.filter(function (item2) {
 });
 console.log(result);
 console.log(result2);
+
+//start find
+
+const brands = [
+  { name: "apple", id: 1 },
+  { name: "HP", id: 2 },
+  { name: "samsung", id: 3 },
+  { name: "samsung", id: 4 },
+];
+
+const result26 = brands.find(function (item) {
+  return item.name === "samsung";
+});
+
+console.log(result26);
+
+//every some helper
+
+const students = [
+  { name1: "Francis", grade: 4 },
+  { name1: "Martin", grade: 5 },
+  { name1: "daus", grade: 7 },
+];
+/*
+let allStudentsPassTheCourse = false;
+
+for (let i = 0; i < students.length; i++) {
+  let student = students[i];
+
+  if (student.grade < 6) {
+    allStudentsPassTheCourse = false;
+    break;
+  } else {
+    allStudentsPassTheCourse = true;
+  }
+}
+*/
+
+let allStudentsPassTheCourse = students.every(function (stdn) {
+  return stdn.grade >= 6;
+});
+
+console.log(allStudentsPassTheCourse);
+
+// reduce Helper
+
+const previous = 200;
+const current = [
+  { expense: "Guitar", amount: 200 },
+  { expense: "Mic", amount: 100 },
+  { expense: "Strap", amount: 150 },
+];
+
+const result22 = current.reduce(function (sum, expense) {
+  return sum + expense.amount;
+}, 0);
+
+console.log(result22);
+
+const users2 = [
+  { name2: "francis", lastname: "norton", age: 25 },
+  { name2: "Martha", lastname: "norton", age: 25 },
+  { name2: "rob", lastname: "norton", age: 25 },
+];
+
+const name22 = users2.reduce(function (start, user) {
+  start.push(user.name2);
+}, []);
+
+// start for of
+
+const names60 = ["jane", "thomas", "james"];
+
+for (let name of names60) {
+  console.log(name);
+}
+
+const numberss = [10, 20, 30, 40, 50];
+let totalll = 0;
+
+for (let number of numberss) {
+  total += number;
+}
+
+console.log(totalll);
+// end
