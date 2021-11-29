@@ -36,3 +36,7 @@ switch (day) {
             console.log("oh yea");
         }
 }
+
+let num = 7;
+
+num === 7 ? console.log("num is 7 ") : console.log("num is not 7");
