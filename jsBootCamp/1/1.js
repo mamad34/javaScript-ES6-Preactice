@@ -177,3 +177,78 @@ let moreNums = nums;
 console.log(nums === moreNums);
 
 // [] === []  ----> false
+
+let itemsOfForofLoop = ["item1", " item2", "item3", "item4", "item5"];
+
+for (let sub of itemsOfForofLoop) {
+    console.log(sub);
+}
+
+for (let char of "thisIsAText") {
+    console.log(char.toUpperCase());
+}
+
+const magicSquare = [
+    [2, 7, 6],
+    [9, 5, 1],
+    [4, 3, 8],
+];
+
+// Version using a for loop...
+for (let i = 0; i < magicSquare.length; i++) {
+    let row = magicSquare[i];
+    let sum = 0;
+    for (let j = 0; j < row.length; j++) {
+        sum += row[j];
+    }
+    console.log(`${row} summed to ${sum}`);
+}
+
+// Much cleaner version using a for...of
+for (let row of magicSquare) {
+    let sum = 0;
+    for (let num of row) {
+        sum += num;
+    }
+    console.log(`${row} summed to ${sum}`);
+}
+
+// EXAMPLE 2
+// If you need the indices, use a traditional for loop!
+const words1 = ["mail", "milk", "bath", "black"];
+const words2 = ["box", "shake", "tub", "berry"];
+
+for (let i = 0; i < words1.length; i++) {
+    //Access index i of both arrays
+    console.log(`${words1[i]}${words2[i]}`);
+}
+
+const movieReviews = {
+    dil: 9.5,
+    alien: 9,
+    amielr: 8.3,
+    googe: 7.2,
+    john: 6.6,
+    "in love": 8,
+    "kill bill": 1,
+    coake: 2.6547,
+};
+
+//it makes error ->
+// for (let x of movieReviews) {
+//     console.log(x);
+// }
+
+for (let movie of Object.keys(movieReviews)) {
+    console.log(movie, movieReviews[movie]);
+}
+// for in wants an object
+
+for (let prop in movieReviews) {
+    console.log(prop);
+    console.log(movieReviews[prop]);
+}
+// for in gives us the keys not the values
+for (let k in [66, 77, 88, 99]) {
+    console.log(k);
+}
