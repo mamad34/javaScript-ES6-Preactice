@@ -252,3 +252,66 @@ for (let prop in movieReviews) {
 for (let k in [66, 77, 88, 99]) {
     console.log(k);
 }
+
+function showTheName(name) {
+    console.log(name);
+}
+showTheName("the input name");
+
+function sum(x, y) {
+    console.log(x + y);
+}
+
+const theOne = ["apple", " dae", " mosx"];
+const theTwo = ["orange", "qweqwe", "gfgf"];
+const combinetArray = [...theOne, ...theTwo];
+console.log(combinetArray);
+
+function pp(x) {
+    return x * x;
+    console.log("this will never print");
+}
+
+function containsPurple(arr) {
+    for (let color of arr) {
+        if (color === "purple" || color === "green") {
+            return true;
+        }
+    }
+    return false;
+}
+
+function isValidPassword(password, username) {
+    if (password.length < 8) {
+        return false;
+    }
+    if (password.indexOf(" ") !== -1) {
+        return false;
+    }
+    if (password.indexOf(username) !== -1) {
+        return false;
+    }
+    return true;
+}
+
+//const and let scope
+function blockedScope() {
+    let x = "this is x inside the function";
+    console.log(x);
+}
+blockedScope();
+//console.log(x);
+
+if (true) {
+    let animal = "eel";
+    console.log(animal);
+}
+console.log(animal);
+
+//var scope (dose not have scope)
+
+if (true) {
+    var animal = "eel";
+    console.log(animal);
+}
+console.log(animal);
