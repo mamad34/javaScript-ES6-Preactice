@@ -109,3 +109,36 @@ function makeBetweenFunc(x, y) {
 const isChild = makeBetweenFunc(0, 18);
 console.log(isChild(8));
 console.log(isChild(88));
+
+// CallBack functions
+
+function shout() {
+    console.log("this is alert after 3 seconds");
+}
+setTimeout(shout, 3000);
+
+function alertOnBtn() {
+    alert("button clicked");
+}
+const btn = document.querySelector("button");
+btn.addEventListener("click", alertOnBtn);
+
+// hoisting
+
+console.log(hoistedVar);
+var hoistedVar = "Oh Yea"; // no Error
+
+// console.log(hoistedLet);
+// let hoistedLet = "Ah Yea"; // Error
+
+dodoriDoDo();
+// it works ether behind
+function dodoriDoDo() {
+    console.log("DoDori Do Do");
+}
+
+// hoot(); if it run it will contain an Error
+console.log(hoot); // undefined
+var hoot = function() {
+    console.log("HOOO HOOOOO");
+};
