@@ -230,3 +230,38 @@ const bookRating = [1.2, 3.4, 6.6, 8.8, 9.9, 7.6, 4.2, 1.2];
 const rates = bookRating.filter((b) => b > 6.6);
 
 //Array Filter
+
+newNums = [
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+];
+
+let odds = newNums.filter((n) => n % 2 === 1);
+let evens = newNums.filter((n) => n % 2 === 0);
+
+// Every & Some
+
+const every = ["dog", "dig", "log", "bag", "wag"];
+const all3Let = every.every((word) => word.length === 3);
+
+const allEntInG = every.every((word) => {
+    const last = word.length - 1;
+    return word[last] === "g";
+});
+
+const som = every.some((word) => word[0] === "d");
+
+// Sort
+
+const prices = [400.5, 3000, 99.99, 33.99, 12.0, 9500];
+
+const badSort = prices.sort(); // sucks
+const ascSort = prices.slice().sort((a, b) => a - b);
+const descSort = prices.slice().sort((a, b) => b - a);
+
+// Reduce
+
+const redaus = [7, 8, 9, 10, 11, 12].reduce((total, curVal) => {
+    return total * curVal;
+});
+
+// Reduce2
