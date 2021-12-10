@@ -285,3 +285,30 @@ const maxGrade2 = grades.reduce((max, curentVal) => {
 const someee = [10, 20, 30, 40, 50, 60, 70, 80, 90].reduce((sum, curval) => {
     return sum + curval;
 }, 1000); // sum start at this number
+
+const votes = [
+    "y",
+    "y",
+    "n",
+    "absent",
+    "y",
+    "n",
+    "n",
+    "y",
+    "n",
+    "n",
+    "n",
+    "n",
+    "y",
+    "y",
+];
+
+// initial value will be this empty object
+const results = votes.reduce((tally, val) => {
+    if (tally[val]) {
+        tally[val]++;
+    } else {
+        tally[val] = 1;
+    }
+    return tally;
+}, {});
