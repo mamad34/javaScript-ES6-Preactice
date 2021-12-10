@@ -265,3 +265,23 @@ const redaus = [7, 8, 9, 10, 11, 12].reduce((total, curVal) => {
 });
 
 // Reduce2
+
+const grades = [87, 64, 96, 92, 88, 99, 73, 70, 64];
+
+const maxGrade = grades.reduce((max, curentVal) => {
+    if (curentVal > max) return curentVal;
+    return max;
+});
+
+//  max      curentVal      return
+//  87           64           87
+//  87           96           96
+//  96           92           96
+
+const maxGrade2 = grades.reduce((max, curentVal) => {
+    return Math.max(max, curentVal);
+}); // same result
+
+const someee = [10, 20, 30, 40, 50, 60, 70, 80, 90].reduce((sum, curval) => {
+    return sum + curval;
+}, 1000); // sum start at this number
