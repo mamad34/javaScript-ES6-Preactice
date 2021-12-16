@@ -40,3 +40,31 @@ const specialUlTags = ul.getElementsByClassName("special");
 console.log(specialUlTags);
 
 // querySelector and  querySelectorAll
+
+const theH1 = document.querySelector("h1");
+console.log(theH1);
+const theFirsParagraph = document.querySelector("p"); // query selector will find the firs match
+console.log(theFirsParagraph);
+console.dir(theFirsParagraph);
+const selectAnId = document.querySelector("#text");
+console.dir(selectAnId);
+console.log(selectAnId);
+
+const firstThingWithClassOfSpecial = document.querySelector(".special");
+console.log(firstThingWithClassOfSpecial);
+
+const firstThingWithParagraphClass = document.querySelector("p.special"); // it means p tag with class of special
+console.log(firstThingWithParagraphClass);
+
+const sectionSpecial = document.querySelector("section li.special"); // find class of special inside of section tag in li s
+console.log(sectionSpecial);
+
+const numberInput = document.querySelector("input[type = number]"); // we use css thing to select
+console.log(numberInput);
+
+// query selector all
+
+const allOfInputs = document.querySelectorAll("input");
+console.log(allOfInputs);
+console.log(allOfInputs.length);
+console.log(allOfInputs[1]);
