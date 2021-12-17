@@ -93,3 +93,34 @@ console.log(thisIsH1.textContent);
 const thePTagWithIdText = document.querySelector("#text");
 console.log(thePTagWithIdText.innerText); // inner text what will show on the page
 console.log(thePTagWithIdText.textContent); // this two have different results content will get all the text inside the code but remove the tags
+
+// innerHtml
+
+const theForm = document.querySelector("form");
+console.log(theForm);
+console.log(thisIsUl.innerHTML);
+
+const pInnerTag = document.querySelector("#innerhtml");
+console.log(pInnerTag.innerHTML);
+
+pInnerTag.innerHTML += "<b> this is child p tag added by innerHtml</b>";
+
+console.log(pInnerTag.innerHTML);
+
+pInnerTag.innerText += "<b>ho yea </b>"; // dose not undrestand the tags
+
+// value src href and more
+
+const theInputs = document.querySelectorAll("input");
+
+console.log(inputs[3].value); // its always on
+console.log(inputs[3].checked); // its  true or false
+console.log(inputs[4].value); // its  seek bar
+theInputs[1].placeholder = "this is some number with js change the placeHolder";
+
+const theATag = document.querySelector("a");
+console.log(theATag.href);
+
+const theImage = document.querySelector("img");
+theImage.src =
+    "https://images.unsplash.com/photo-1639610806386-661d00972b55?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80";
