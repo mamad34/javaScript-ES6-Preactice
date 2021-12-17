@@ -68,3 +68,28 @@ const allOfInputs = document.querySelectorAll("input");
 console.log(allOfInputs);
 console.log(allOfInputs.length);
 console.log(allOfInputs[1]);
+
+// section 14
+
+// working with innerText & text content
+
+const thisIsH1 = document.querySelector("h1");
+console.log(thisIsH1.innerText);
+console.dir(thisIsH1.innerText);
+
+const thisIsUl = document.querySelector("ul");
+console.log(thisIsUl); // return ALl text inside the ul
+
+// document.querySelector("body") === document.body     so ->
+
+console.log(document.body.innerText); // returns all the txt in the body
+
+thisIsH1.innerText = "This is changed H1 with inner text";
+
+// if we change ul with inner text it will change all the text of li's to a single text
+
+console.log(thisIsH1.textContent);
+
+const thePTagWithIdText = document.querySelector("#text");
+console.log(thePTagWithIdText.innerText); // inner text what will show on the page
+console.log(thePTagWithIdText.textContent); // this two have different results content will get all the text inside the code but remove the tags
