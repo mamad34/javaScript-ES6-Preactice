@@ -2,6 +2,11 @@ h1 {
     color: coral;
 }
 
+h1:hover {
+    color: chartreuse;
+    font-size: 40px;
+}
+
 ul {
     color: brown;
 }
