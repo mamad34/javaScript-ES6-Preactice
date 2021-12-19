@@ -197,3 +197,33 @@ console.log(liStyle.color);
 compStyles = getComputedStyle(theH1);
 console.log(compStyles.color);
 console.log(compStyles.fontSize);
+
+// create Element
+
+const newH2 = document.createElement("h2");
+console.dir(newH2);
+newH2.innerText = "this h2 added by createElement";
+console.log(newH2);
+newH2.classList.add("special"); // we added a class to newH2
+
+// for showing this we haveto append it to be a child of smth (section tag)
+
+const section = document.querySelector("section");
+section.appendChild(newH2);
+
+const newImg = document.createElement("img");
+newImg.src =
+    "https://randomwordgenerator.com/img/picture-generator/sebastiaan-stam-XbZkCaminOY-unsplash.jpg";
+newImg.style.width = "300px";
+document.body.appendChild(newImg);
+
+const newLink = document.createElement("a");
+newLink.innerText = "some random video content";
+newLink.href = "https://www.aparat.com/v/TLVYr";
+document.body.appendChild(newLink);
+
+// append and prepend and insertBefore
+
+const newLI = document.createElement("li");
+newLI.innerText = "this li added from js";
+ul.appendChild(newLI);
