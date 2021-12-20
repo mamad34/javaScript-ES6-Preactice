@@ -227,3 +227,13 @@ document.body.appendChild(newLink);
 const newLI = document.createElement("li");
 newLI.innerText = "this li added from js";
 ul.appendChild(newLI);
+// now we want to put it at the top
+
+const theParentUl = document.querySelector("ul");
+const newLI2 = document.createElement("li");
+newLI2.innerText = "this is new LI before";
+const firstLI2 = document.querySelector(li.special);
+theParentUl.insertBefore(
+    newLI2, // what we want to insert
+    firstLI2 // where we want to insert
+);
