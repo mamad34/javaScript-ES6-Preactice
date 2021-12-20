@@ -131,7 +131,7 @@ document.body.prepend(chart1);
 // **************************************************
 // STEP 1 - UGLY, UN-REFACTORED CODE! (but it works!)
 // **************************************************
-
+/*
 const ulParent = document.createElement("ul");
 for (let game of warriorsGames) {
     const { homeTeam, awayTeam } = game;
@@ -154,3 +154,4 @@ for (let game of warriorsGames) {
 }
 
 document.body.prepend(ulParent);
+*/
