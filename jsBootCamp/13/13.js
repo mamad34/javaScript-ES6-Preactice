@@ -3,6 +3,7 @@
 
 // XML HTTP REQUEST
 
+/*
 const firstReq = new XMLHttpRequest();
 firstReq.addEventListener("load", () => {
   console.log("it Worked");
@@ -13,11 +14,82 @@ firstReq.addEventListener("load", () => {
   for (let planet of data.results) {
     console.log(planet.name);
   }
+  const filmURL = data.results[0].films[0];
+  const filmReq = new XMLHttpRequest();
+  filmReq.addEventListener("load", function () {
+    const filmData = JSON.parse(this.responseText);
+    console.log(filmData);
+  });
+  filmReq.addEventListener("error", function (e) {
+    console.log("error", e);
+  });
+  filmReq.open("GET", filmURL);
+  filmReq.send();
 });
-firstReq.addEventListener("error", () => {
+
+firstReq.addEventListener("error", (e) => {
   console.log("Error!!!");
 });
 firstReq.open("GET", "https://swapi.dev/api/planets"); // Creating The Request
 firstReq.send(); // Sendig the req that we created
 console.log("Request Send");
 console.log(firstReq);
+*/
+// A better way fetch
+/*
+
+fetch("https://swapi.dev/api/planets")
+  .then((response) => {
+    console.log(response);
+    //  console.log(response.json()); //also return a promise
+    if (!response.ok) {
+      throw new Error(`Status Code Error ${response.status}`);
+    } else {
+      response.json().then((data) => {
+        console.log(data);
+        for (let planet of data.results) {
+          console.log(planet);
+          console.log(planet.name);
+        }
+      });
+    }
+  })
+  .catch((err) => {
+    console.log("somthing is wrong");
+    console.log(err);
+  });
+
+  */
+// Chaining Fetch Requests
+
+fetch("https://swapi.dev/api/planets/")
+  .then((response) => {
+    console.log(response);
+    //  console.log(response.json()); //also return a promise
+    if (!response.ok) {
+      throw new Error(`Status Code Error ${response.status}`);
+    } else {
+      return response.json();
+    }
+  })
+  .then((data) => {
+    console.log(data);
+    console.log(data.results[0].films[0]);
+    const filmURL = data.results[0].films[0];
+    return fetch(filmURL);
+  })
+  .then((response) => {
+    // then for fetch film url
+    if (!response.ok) throw new Error(`STATUS CODE ERROR : ${response.status}`);
+
+    return response.json();
+  })
+  .then((data) => {
+    //then for respnse.json
+    console.log("Fetched first film");
+    console.log(data.title);
+  })
+  .catch((err) => {
+    console.log("somthing is wrong");
+    console.log(err);
+  });
