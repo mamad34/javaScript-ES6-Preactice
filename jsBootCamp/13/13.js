@@ -62,6 +62,7 @@ fetch("https://swapi.dev/api/planets")
   */
 // Chaining Fetch Requests
 
+/*
 fetch("https://swapi.dev/api/planets/")
   .then((response) => {
     console.log(response);
@@ -89,6 +90,49 @@ fetch("https://swapi.dev/api/planets/")
     console.log("Fetched first film");
     console.log(data.title);
   })
+  .catch((err) => {
+    console.log("somthing is wrong");
+    console.log(err);
+  });
+
+  */
+
+// refactoring Fetch Chains
+const checkStatusAndPars = (response) => {
+  if (!response.ok) {
+    throw new Error(`Status Code Error ${response.status}`);
+  } else {
+    return response.json();
+  }
+};
+
+const printPlanets = (data) => {
+  console.log("Loaded 10 more planets");
+  for (let planet of data.results) {
+    console.log(planet.name);
+  }
+
+  /*
+  first way 
+  const p = new Promise((resolve, reject) => {
+    resolve(data);
+  });
+  return p;
+  */
+
+  // second way
+
+  return Promise.resolve(data.next);
+};
+
+const fetchNextPlanets = (url = "https://swapi.dev/api/planets/") => fetch(url);
+
+fetchNextPlanets()
+  .then(checkStatusAndPars)
+  .then(printPlanets)
+  .then(fetchNextPlanets)
+  .then(checkStatusAndPars)
+  .then(printPlanets)
   .catch((err) => {
     console.log("somthing is wrong");
     console.log(err);
